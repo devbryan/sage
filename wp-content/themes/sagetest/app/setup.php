@@ -11,8 +11,29 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+    wp_enqueue_style('sage/animate.css', get_template_directory_uri().'/assets/styles/animate.css', false, null);
+    wp_enqueue_style('sage/bootstrap.min', get_template_directory_uri().'/assets/styles/bootstrap.min.css', false, null);
+    wp_enqueue_style('sage/flaticon.css', get_template_directory_uri().'/assets/styles/flaticon.css', false, null);
+    wp_enqueue_style('sage/fontawesome.css', get_template_directory_uri().'/assets/styles/fontawesome.css', false, null);
+    wp_enqueue_style('sage/green.css', get_template_directory_uri().'/assets/styles/green.css', false, null);
+    wp_enqueue_style('sage/magnific-popup.css', get_template_directory_uri().'/assets/styles/magnific-popup.css', false, null);
+    wp_enqueue_style('sage/owl.carousel.min.css', get_template_directory_uri().'/assets/styles/owl.carousel.min.css', false, null);
+    wp_enqueue_style('sage/owl.theme.default.min.css', get_template_directory_uri().'/assets/styles/owl.theme.default.min.css', false, null);
+    wp_enqueue_style('sage/responsive.css', get_template_directory_uri().'/assets/styles/responsive.css', false, null);
+
+    
+    //wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+    wp_enqueue_script('sage/jquery-3.3.1.min.js',get_template_directory_uri().'/assets/scripts/jquery-3.3.1.min.js', array(), null, true);
+    wp_enqueue_script('sage/bootstrap.js',get_template_directory_uri().'/assets/scripts/bootstrap.min.js', array(), null, true);
+    wp_enqueue_script('sage/custom.js',get_template_directory_uri().'/assets/scripts/custom.js', array(), null, true);
+    wp_enqueue_script('sage/fontawesome.js',get_template_directory_uri().'/assets/scripts/fontawesome.js', array(), null, true);
+    wp_enqueue_script('sage/jquery.appear.js',get_template_directory_uri().'/assets/scripts/jquery.appear.js', array(), null, true);
+    wp_enqueue_script('sage/jquery.magnific-popup.min.js',get_template_directory_uri().'/assets/scripts/jquery.magnific-popup.min.js', array(), null, true);
+    wp_enqueue_script('sage/jquery.scrollto.js',get_template_directory_uri().'/assets/scripts/jquery.scrollto.js', array(), null, true);
+    wp_enqueue_script('sage/jquery.vide.min.js',get_template_directory_uri().'/assets/scripts/jquery.vide.min.js', array(), null, true);    
+    wp_enqueue_script('sage/owl.carousel.min.js',get_template_directory_uri().'/assets/scripts/owl.carousel.min.js', array(), null, true);
+    wp_enqueue_script('sage/wow.js',get_template_directory_uri().'/assets/scripts/wow.js', array(), null, true);
+    // wp_enqueue_script('sage/main.js',get_template_directory_uri().'/assets/styles/responsive.css', array(), null, true);
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
