@@ -12,7 +12,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 color-light">
-                    <p>Copyright © 2019. All rights reserved.</p>
+                    <!-- <p>Copyright © 2019. All rights reserved.</p> -->
+                    
+                    @if ( is_active_sidebar( 'sidebar-footer' ) )
+                            <p>
+                            @php dynamic_sidebar( 'sidebar-footer' ); @endphp
+                            </p>
+                    @endif
+
+                    
                 </div>
             </div>
         </div>
